@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Adityakumar">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Harmony-Hub - Services</title>
+
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="Content/app.css">
+
+    <style>
+
+        .services-container {
+            max-width: 800px;
+            margin: 50px auto;
+            border: 3px solid black; /* Border properties added */
+            padding: 10px; /* Added padding */
+            border-radius: 10px; /* Added border radius */
+        }
+
+        .service-tab {
+            cursor: pointer;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .service-tab:hover {
+            background-color: #e2e6ea;
+        }
+
+        .service-details {
+            display: none;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: calc(100% - 20px); /* Adjusted width */
+            margin-left: 20px; /* Added margin-left */
+        }
+
+        .service-tab i {
+            margin-right: 10px;
+        }
+
+        .service-details i {
+            color: black; /* Adjust the color as needed */
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i class="fa-solid fa-people-group"></i> Harmony-Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html"> Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html"> Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blogs</a>
+                    </li>
+                </ul>
+
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="privacy.html">Privacy Policy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="terms.html">Terms of Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="services-container">
+    <div class="service-tab" onclick="toggleService(1)">
+        <i class="fas fa-cogs"></i><b>OptiTech</b>
+        <div class="service-details" id="service1-details">
+            <i>
+                OptiTech provides comprehensive solutions to optimize and streamline your business processes. We leverage cutting-edge technologies and industry best practices to enhance efficiency and drive growth. Our team of experts collaborates with you to identify areas for improvement, customize solutions, and implement strategies that align with your business goals. From workflow automation to system integration, Service 1 is committed to delivering innovative solutions tailored to your unique needs.
+            </i>
+        </div>
+
+
+    </div>
+
+    <div class="service-tab" onclick="toggleService(2)">
+        <i class="fas fa-chart-line"></i><b>DataShield</b>
+        <div class="service-details" id="service2-details">
+            <i >
+                DataShield ensures the security and integrity of your data. Our advanced encryption and monitoring systems safeguard your information, providing you peace of mind in the digital realm.
+            </i>
+        </div>
+    </div>
+
+    <div class="service-tab" onclick="toggleService(3)">
+        <i class="fas fa-mobile-alt"></i><b>MobileXpert</b>
+        <div class="service-details" id="service3-details">
+            <i>
+                MobileXpert is your solution for mobile application development. We create innovative and user-friendly mobile apps tailored to your needs. Stay ahead in the mobile technology landscape with MobileXpert.
+            </i>
+        </div>
+    </div>
+</div>
+
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="script/app.js"></script>
+<script>
+    function toggleService(serviceNumber) {
+        const serviceDetails = $(`#service${serviceNumber}-details`);
+        serviceDetails.slideToggle();
+    }
+</script>
+</body>
+</html>

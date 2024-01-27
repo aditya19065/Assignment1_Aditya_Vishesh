@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Harsh Panchal">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home - Harmony-Hub</title>
+
+    <!-- CSS Section -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="Content/app.css">
+
+    <!-- Additional Styles for the Slideshow -->
+    <style>
+
+        #container {
+            width: 500px;
+            margin: auto;
+            text-align: center;
+            border: 3px solid black; /* Added border */
+            background-color: rgba(255, 255, 255, 0.8); /* Added background color with opacity */
+        }
+
+        #slideshow {
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+            height: 500px;
+        }
+
+        #slideshow img {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        #welcome-message {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i class="fa-solid fa-people-group"></i> Harmony-Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html"> Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html"> Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blogs</a>
+                    </li>
+                </ul>
+
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="privacy.html">Privacy Policy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="terms.html">Terms of Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div id="container">
+
+    <div id="slideshow" class="my-5">
+        <img src="image/image1.png" alt="Slide 1">
+        <img src="image/image2.jpg" alt="Slide 2">
+
+
+    </div>
+
+
+    <section id="welcome-message" class="my-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Welcome to Harmony Hub</h2>
+                <p class="lead">A vibrant community center for all ages and backgrounds</p>
+                <p>Welcome to Harmony Hub, where technology meets community service. Explore our services, events, workshops, and community projects.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Scripting Section that runs after the content loads -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="script/app.js"></script>
+
+<!-- Script for the Slideshow -->
+<script>
+    $(document).ready(function () {
+        function slideShow() {
+            var $slideshow = $('#slideshow');
+            var $images = $slideshow.find('img');
+            var currentIndex = 0;
+
+            // Show the first image initially
+            $images.eq(currentIndex).show();
+
+            // Function to switch to the next image
+            function nextSlide() {
+                $images.eq(currentIndex).fadeOut();
+                currentIndex = (currentIndex + 1) % $images.length;
+                $images.eq(currentIndex).fadeIn();
+            }
+
+            // Set interval for the slideshow
+            setInterval(nextSlide, 5000); // Change the interval as needed (5000 milliseconds = 5 seconds)
+        }
+
+        // Call the slideshow function
+        slideShow();
+    });
+</script>
+</body>
+</html>
